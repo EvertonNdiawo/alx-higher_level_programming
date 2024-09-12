@@ -2,6 +2,6 @@
 
 for x in range(100):
     if x == 99:
-        print(x);
+        print(x)
     else:
         print("{:02d}".format(x), end=', ')
