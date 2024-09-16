@@ -9,7 +9,7 @@ def tebahpla():
             control_value = 0
         else:
             control_value = 32
-        print(chr(x - control_value), end="")
+        print("{}".format(chr(x - control_value)), end="")
 
 
 tebahpla()
