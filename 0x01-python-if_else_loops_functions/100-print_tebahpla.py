@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
-def tebahpla(x = 122):
-    if x < 97:
-        return
+def tebahpla():
 
-    position_from_z = 122 - x
+    for x in range(122, 96, -1):
+        position_from_z = 122 - x
 
-    if position_from_z % 2 == 0:
-        print(chr(x), end="")
-    else:
-        print(chr(x - 32), end="")
+        if position_from_z % 2 == 0:
+            control_value = 0
+        else:
+            control_value = 32
+        print(chr(x - control_value), end="")
 
-    tebahpla(x - 1)
 
 tebahpla()
