@@ -7,4 +7,4 @@ def print_last_digit(number):
         last = number % -10
         last *= -1
     print("{}".format(last), end="")
-    return(last)
+    return (last)
