@@ -15,6 +15,7 @@ if __name__ == "__main__":
 
     if argv[2] not in ['+', '-', '*', '/']:
         print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
     operator = argv[2]
 
