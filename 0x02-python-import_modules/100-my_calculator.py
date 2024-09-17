@@ -4,8 +4,8 @@ from calculator_1 import add, sub, mul, div
 import sys
 from sys import argv
 
-if __name__== "__main__":
-    
+if __name__ == "__main__":
+
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
@@ -28,7 +28,7 @@ if __name__== "__main__":
 
     if (operator == '*'):
         result = mul(a, b)
-        print("{} * {}".format(a, b, result))
+        print("{} * {} = {}".format(a, b, result))
 
     if (operator == '/'):
         result = div(a, b)
