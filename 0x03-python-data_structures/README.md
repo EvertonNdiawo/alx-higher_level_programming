@@ -38,7 +38,7 @@ Example:
 
 	```
 
-3. listname***.append(item)*** -> Adds a new item at the end of the specified list.
+3. listname.append(item) -> Adds a new item at the end of the specified list.
 	
 	```
 		squares.append(121) therefore adds a the square of 11 at the end of our sqaures list.
