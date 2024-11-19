@@ -199,7 +199,7 @@ Example:
 - Tuples are immutable, once created, their values cannot be changed. They can however contain mutable objects within the values, for instance in the case of nesting.
 - Tuples are always outputed within brackets to distinguish the nested elements in case they are contained within the tuple. 
 - an empty tuple is indicated using empty parenthese e.g `empty = ()`
-- a tuple with a single item is indicated by the item followed by a comma. e.g `singleton = 'hello',
+- a tuple with a single item is indicated by the item followed by a comma. e.g `singleton = 'hello',`
 
 
 ## Sets
