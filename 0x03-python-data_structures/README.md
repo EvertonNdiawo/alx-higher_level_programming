@@ -181,6 +181,7 @@ Example:
 			for y in [3,1,4]:
 				if x != y:
 					combs.append((x, y))
+```
 
 ## The del statement
 
