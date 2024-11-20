@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    
+
     first_char = ""
     length_s = len(sentence)
 
