@@ -23,10 +23,10 @@ def add_tuple(tuple_a = (), tuple_b = ()):
         else:
             result = ((tuple_a[0] + tuple_b[0]), (tuple_a[1] + tuple_b[1]))
     
-    elif (tuple_b) == ():
+    elif not tuple_b:
         result = ((tuple_a[0]), (tuple_a[1]))
 
-    elif (tuple_a) == ():
+    elif not tuple_a:
         result = ((tuple_b[0]), (tuple_b[1]))
 
     else:
