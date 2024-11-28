@@ -62,3 +62,30 @@
 		>>> a
 
 		{'r', 'd'} //Result of all letters found in `abracadabra` where the letters are not in contained in `a, b or c`.
+```
+
+## Dictionaries
+
+- Are indexed by keys, unlike in python's sequences `lists, strings, tuples e.t.c` that are indexed by a range of numbers.
+
+- These keys can be any `immutable` types eg strings and numbers.
+
+- A tuple can be used as a key if it only contains strings, or numbers or another tuple. If it contains any mutable object either directly or indirectly, it cannot be used as a key.
+
+- Lists cannot be used as keys since they can be modified in place using index assignments, slice operations or methods such as append().
+
+- An empty dictionary is created using a pair of empty braces `{}`.
+
+- The body of a dictionary generally consists of a comma-seperated list of `key:value` pairs. This is also how a dictionary is written on output.
+
+- Main operations on a dictionary are storing values with some key and extracting this given value using the given key. 
+
+- Deletion of a `key:value` pair is also possible using the `del` keyword.
+
+- Storing with a key that is already in use replaces the old value associated with that key with the newly supplied value. 
+
+- Extracting a value using a  non-existent key results in an error. 
+
+- The operation `list(d)` on a dictionary returns a list of all the keys used in the dictionary.
+- To check whether a single key is found within a dictionary, the keyword `in` suffices. 
+- `sorted(d)` returns a sorted list of keys in the dictionary. 
