@@ -253,3 +253,124 @@ Example:
 	- Otherwise if one sequence defers to the other, they are considered not equal.
 
 	- If one sequence is `a sub-sequence` to the other, it is considered the `lesser one`, even if all its items equally compare to some items in the other sequence.
+
+
+## Lambda, filter(), map() and reduce()
+
+### Lambda fuctions
+
+- Known as the lambda operator or function.
+- Is a way to creat small anonymous functions (throw-away functions), just needed where they have been create
+  and discarded thereafter.
+- Are mainly used in conjuction with the functions `filter()`, `map()` and `reduce()`.
+
+- General syntax is of the form:
+
+	```
+		lambda argument_list: expression
+
+		Example:
+
+			sum = lambda x, y: x + y
+			sum(3, 4)
+
+	```
+
+  Whereby the argument list consists of a comma separaed list of arguments and the expression is an arithmetic expression using these arguments.
+
+- This function can be asigned to a variable to give it a name.
+
+
+### The map() function
+
+- Takes two arguments:
+
+	```
+		r = map(func, seq)
+	```
+
+	Whereby the first argument, `func` is the name of a function and the second argument, `seq` is a sequence whose elements are to be subjected to the function in the first argument.
+
+- Example:
+
+	```
+		C = [39.2, 36.5, 37.3, 38, 37.8]
+		F = list(map(lambda x: (float(9)/5)*x + 32, C))
+
+	```
+
+- map() can be applied to more than one list. These lists do not need to be of the same length.
+
+- Example:
+
+	```
+		a = [1, 2, 3, 4]
+		b = [17, 12, 11, 10]
+		c = [-1, -4, 5, 9]
+
+		list(map(lambda x, y, z : x+y+z, a, b, c))
+
+
+		[17, 10, 19, 23] // Results
+	```
+
+- When a list has fewer values than the other, map() stops when the shortest list has been consumed.
+
+#### Mapping a list of functions
+
+- It is also very possible to map a bunch of functions to a single python object. These functions may be supplied in the form of an iterable such as a list or tuple.
+
+- The example below illustrates this:
+
+	```
+		from math import sin, cos, tan, pi
+
+		def map_functions(x, functions):  // Here x = object, functions = bunch of functions
+
+			res = []
+
+			for func in funcions:
+				res.append(func(x))
+			return res
+
+		family_of_functions = (sin, cos, tan)
+		
+		print(map_functions(pi, family_of_functions)
+
+	```
+
+### Filtering
+
+- Through the function, `filter(function, sequence)` offers a way to filter out all the elements of a sequence for which the function `function` returns True.
+
+- An item is produced by the iterator result of `filter(function, sequence)` if item is included in the sequence `sequence` and if the `function(item)` returns `True` 
+
+- The function `filter(f, I)` needss a function as the first argument, `f` has to return a `Boolean` value and this function is applied to every element of the list I. Only if f returns `True` will the element in `I` be returned by the iterator, which is the return value of filter.
+
+- Exampl:
+
+	```
+		fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+		odd_numbers = list(filter(lambda x: x % 2, fibonacci))
+		
+		print(odd_numbers)
+	```
+
+## Reducing a list
+
+- The function, `reduce(func, seq)` continually applies the function `func()` to the sequence `seq`. It returns a single value.
+
+- Here's an illustration of how the reduce() works.
+	
+	if the seq = [s1, s2, s3, s4,...sn], calling reduce(func, seq) works like this:
+
+	At first the first two elements of seq will be applied to func, i.e func(s1, s2) and the list on which
+	the function func now works on looks like this, [func(s1, s2), s3, s4,...sn].
+
+	In the next step, func is applied to the previous result and the third element of the list, i.e 
+		func(func(s1, s2), s3)
+
+	This goes on cummulatively until just one element is left and returns this element as the result
+	of reduce().
+
+- In order to use reduce(), you have to import `functools`.
