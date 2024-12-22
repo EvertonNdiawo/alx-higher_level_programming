@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-let num = Number(process.argv[2]);
+const num = Number(process.argv[2]);
 
-function factorial(num) {
+function factorial (num) {
   if (num === 0 || num === 1 || isNaN(num)) {
     return 1;
   }
