@@ -1,4 +1,4 @@
-## JAVASCRIPT - Objects, Scopes and Closures
+## JAVASCRIPT - OBJECTS, SCOPES and CLOSURES
 
 ### Defining objects
 
@@ -161,3 +161,76 @@
 - It is also possible to initialize properties with a default value so that when an object of the said class is created, the property is initialized with a default value.
 
 - The constructor works just like a constructor defined outside a class definition.[ `See constructor section above` ](#Constructors)
+
+- Given that a class provides a template to create new objects of the same type, creating a new instance of the same object just requires the use of `new` keyword. Example:
+
+```
+	const Ndiawo = new person("Ndiawo");
+	Ndiawo.introduceSelf();                // Hi! I'm Ndiawo
+```
+
+- **_NOTE_** - If no special initialization is necessary, it is possible to omit the constructor and a default constructor will be generated instead.
+
+
+### Inheritance
+
+- The `extends` keyword is used to indicate that a class inherits from another class. Example:
+
+```
+	class professor extends person {
+	  teaches;
+
+	  constructor(name, teaches) {
+	    super(name);
+	    this.teaches = teaches;
+	  }
+
+	  introduceSelf() {
+	    console.log(`My name is ${this.name} and I will be your ${this.teaches} professor.`);
+	  }
+```
+
+- In the new class that inherits from the other, only the newly added properties need to be declared.
+
+- In this scenario, the professor class is known as a `subclass` of the `person` class.
+
+- If a subclass has any of its own initializations to do, it must first call the `superclass` constructor using `super()`, passing any parameters that the superclass constructor is expecting.
+
+
+### ENCAPSULATION
+
+- Private data properties must be declared in the class declaration starting with `#`. 
+
+- Private properties cannot be accessed outside the class and provisions for a way to hide certain properties of an object. Example:
+
+```
+	class student extends person {
+	  #year         //private member
+
+	  constructor(name, year) {
+	    super(name);
+	    this.#year = year;
+	  }
+
+
+	// With this code, trying:
+
+		const summert = new student("summers", 2);
+	   	summers.#year;    //results into a syntax error since year is private and cannot be accessed outside of the class declaration.
+
+```
+
+#### Private methods
+
+- just like private data properties, their names start with a `#` and they can only be called by the object's own methods. Example:
+
+```
+	class example {
+	  somePublicMethod() {
+		this.#somePrivateMethod();
+	  }
+
+	  #somePrivateMethod() {
+	    console.log("You called me ?");
+	  }
+	}
