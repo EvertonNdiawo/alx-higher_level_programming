@@ -106,3 +106,58 @@
 - In the context of an object method, `this` refers to the object that the method was called on.
 - the keyword allows the same method definition to work for multiple objects by only refering to the object on which a method is called.
 -  Very useful when using `constructors` to create more than one object from a single object definition.
+
+
+###Constructors
+
+- Are very useful when creating multiple objects. Saves the time that could have otherwise been spent in creating multiple objects using the `object literal` way, whereby all objects are typed one after the other.
+
+- Sort of provides an automatic way of creating multiple objects from a single definition.
+
+- Also allows for updating multiple objects at once.
+
+- A `constructor` is simply a function that is called using the `new` keyword.
+
+- When called, a constructor;
+	1. Creates a new object
+	2. Binds `this` keyword to the new object, so its available for use with the objects created
+	3. Run the code in the constructor(function that is called using `this` keyword)
+	4. Return the new object.
+
+- By convention, constructors start with a capital letter and are named for the type of object. Example:
+
+```
+	function person(name) {
+	  this.name = name;
+	  this.introduceSelf = function () {
+	    console.log(`Hi! I'm ${this.name}.`);
+	  };
+	}
+
+
+	const salva = new person("Salva");   // Creates a person object with name value of Salva
+
+```
+
+## CLASSES AND CONSTRUCTORS
+
+- A class is declared using the `class` keyword. Example:
+
+```
+	class person {
+	  name;
+	  constructor(name) {
+	    this.name = name;
+	  }
+
+	  introduceSelf() {
+	    console.log(`Hi! I'm ${this.name}`);
+	  }
+	}
+```
+
+- The above code createsa a class called `person` with: a `name` property, a constructor that takes a `name` parameter that is used to initialize the new object's `name` property and an `introduceSelf()` method that can refer to the object's properties using `this` keyword.
+
+- It is also possible to initialize properties with a default value so that when an object of the said class is created, the property is initialized with a default value.
+
+- The constructor works just like a constructor defined outside a class definition.[`(See constructor section above)`](#Constructors)
