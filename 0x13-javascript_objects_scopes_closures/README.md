@@ -160,4 +160,4 @@
 
 - It is also possible to initialize properties with a default value so that when an object of the said class is created, the property is initialized with a default value.
 
-- The constructor works just like a constructor defined outside a class definition.[ `(See constructor section above)` ](#Constructors)
+- The constructor works just like a constructor defined outside a class definition.[ `See constructor section above` ](#Constructors)
