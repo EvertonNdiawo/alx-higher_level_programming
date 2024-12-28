@@ -108,7 +108,7 @@
 -  Very useful when using `constructors` to create more than one object from a single object definition.
 
 
-###Constructors
+### Constructors
 
 - Are very useful when creating multiple objects. Saves the time that could have otherwise been spent in creating multiple objects using the `object literal` way, whereby all objects are typed one after the other.
 
@@ -160,4 +160,4 @@
 
 - It is also possible to initialize properties with a default value so that when an object of the said class is created, the property is initialized with a default value.
 
-- The constructor works just like a constructor defined outside a class definition.[`(See constructor section above)`](#Constructors)
+- The constructor works just like a constructor defined outside a class definition.[ `(See constructor section above)` ](#Constructors)
