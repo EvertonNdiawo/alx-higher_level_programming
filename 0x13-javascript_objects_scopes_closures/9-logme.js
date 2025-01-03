@@ -1,11 +1,9 @@
 #!/usr/bin/node
-exports.logMe = function (item) {
-  const args = [];
-  if (item) {
-    args.push(item);
-  }
+let counter = 0;
 
-  for (let i = 0; i < args.length; i++) {
-    console.log(`${i} : ${args[i]}`);
+exports.logMe = function (item) {
+  if (item) {
+    console.log(`${counter} : ${item}`);
+    counter++;
   }
 };
